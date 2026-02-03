@@ -1,0 +1,165 @@
+/* ---------- GLOBAL ---------- */
+body {
+  background: linear-gradient(135deg, #eef2f7, #f9fbfd);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+}
+
+/* ---------- CONTAINER ---------- */
+.container {
+  background: #ffffff;
+  padding: 24px 28px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  margin-top: 30px;
+}
+
+/* ---------- HEADER ---------- */
+h2 {
+  font-weight: 700;
+  color: #1f2937;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* ---------- FORM CARD ---------- */
+.card {
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.card-body {
+  padding: 18px 20px;
+}
+
+/* ---------- INPUTS ---------- */
+input,
+select {
+  border-radius: 8px !important;
+  border: 1px solid #d1d5db !important;
+  padding: 10px !important;
+  font-size: 14px;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #4f46e5 !important;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.15) !important;
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 6px 14px;
+  transition: all 0.2s ease;
+}
+
+.btn-danger {
+  background: #ef4444;
+  border: none;
+}
+
+.btn-danger:hover {
+  background: #dc2626;
+}
+
+.btn-secondary {
+  background: #4f46e5;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background: #4338ca;
+}
+
+.btn-outline-danger {
+  border-radius: 20px;
+  font-size: 13px;
+  padding: 5px 12px;
+}
+
+/* ---------- USER CARDS ---------- */
+#userList .card {
+  margin-bottom: 18px;
+}
+
+.card h5 {
+  font-weight: 700;
+  color: #111827;
+}
+
+.card p {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+/* ---------- ROLE & STATUS BADGES ---------- */
+strong {
+  color: #1f2937;
+}
+
+/* ---------- FEEDBACK SECTION ---------- */
+h6 {
+  font-weight: 600;
+  margin-top: 10px;
+  color: #4f46e5;
+}
+
+.list-group-item {
+  border: none;
+  background: #f9fafb;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.list-group-item small {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+/* ---------- LOGOUT BUTTON ---------- */
+#logoutBtn {
+  float: right;
+  margin-bottom: 12px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .container {
+    padding: 18px;
+  }
+
+  .card-body {
+    padding: 14px;
+  }
+}
+.own-review {
+  background-color: #e0f2fe !important;
+  border-left: 4px solid #0ea5e9;
+}
+#loginContainer {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
