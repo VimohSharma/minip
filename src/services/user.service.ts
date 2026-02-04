@@ -23,7 +23,6 @@ export function createUser(
   );
 
   if (isDuplicate) {
-    alert("User with this email already exists");
     return null;
   }
   const newUser: User = {

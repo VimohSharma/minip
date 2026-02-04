@@ -6,7 +6,6 @@ export function createUser(name, email, role, status) {
     const existingUsers = getUsers();
     const isDuplicate = existingUsers.some(user => user.email === email);
     if (isDuplicate) {
-        alert("User with this email already exists");
         return null;
     }
     const newUser = {

@@ -6,8 +6,8 @@ import { getSessionUser } from "../session.js";
 
 export function handleFeedback(userId: number): void {
   const sessionUser = getSessionUser();
-  const message = prompt("Enter feedback");
-  const ratingInput = prompt("Enter rating (1-5)");
+  const message = window.prompt("Enter feedback");
+  const ratingInput = window.prompt("Enter rating (1-5)");
 
   if (!sessionUser || !message || !ratingInput) return;
   const rating = Number(ratingInput);

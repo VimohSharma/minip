@@ -1,161 +1,228 @@
-/* ---------- GLOBAL ---------- */
-body {
-  background: linear-gradient(135deg, #eef2f7, #f9fbfd);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+/* ===============================
+   GLOBAL RESET & THEME
+================================ */
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --danger: #ef4444;
+  --danger-dark: #dc2626;
+  --bg: #f4f7fb;
+  --card-bg: #ffffff;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --border: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
   min-height: 100vh;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
 }
 
-/* ---------- CONTAINER ---------- */
-.container {
-  background: #ffffff;
-  padding: 24px 28px;
-  border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  margin-top: 30px;
+/* ===============================
+   LOGIN SCREEN
+================================ */
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* ---------- HEADER ---------- */
-h2 {
-  font-weight: 700;
-  color: #1f2937;
+.login-card {
+  background: var(--card-bg);
+  width: 100%;
+  max-width: 380px;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
   text-align: center;
+}
+
+.login-card h3 {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.login-card p {
+  color: var(--text-muted);
   margin-bottom: 24px;
 }
 
-/* ---------- FORM CARD ---------- */
-.card {
+/* ===============================
+   INPUTS & SELECTS
+================================ */
+input, select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(79,70,229,0.15);
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+.btn {
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 14px;
+}
+
+.btn-primary {
+  background: var(--primary);
   border: none;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn-danger {
+  background: var(--danger);
+  border: none;
+}
+
+.btn-danger:hover {
+  background: var(--danger-dark);
+}
+
+.btn-secondary {
+  background: var(--primary);
+  border: none;
+}
+
+.btn-secondary:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.btn-outline-danger {
+  border: 1px solid var(--danger);
+  color: var(--danger);
+  background: transparent;
+}
+
+/* ===============================
+   MAIN APP CONTAINER
+================================ */
+.container {
+  margin-top: 32px;
+  background: transparent;
+}
+
+#logoutBtn {
+  float: right;
+  margin-bottom: 16px;
+}
+
+/* ===============================
+   ADD USER FORM
+================================ */
+#userForm {
+  background: var(--card-bg);
+  padding: 20px;
   border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  margin-bottom: 30px;
+}
+
+/* ===============================
+   USER CARDS
+================================ */
+#userList .col-md-4 {
+  margin-bottom: 20px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.08);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.12);
 }
 
 .card-body {
-  padding: 18px 20px;
-}
-
-/* ---------- INPUTS ---------- */
-input,
-select {
-  border-radius: 8px !important;
-  border: 1px solid #d1d5db !important;
-  padding: 10px !important;
-  font-size: 14px;
-  transition: border 0.2s ease, box-shadow 0.2s ease;
-}
-
-input:focus,
-select:focus {
-  border-color: #4f46e5 !important;
-  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.15) !important;
-}
-
-/* ---------- BUTTONS ---------- */
-.btn {
-  border-radius: 8px;
-  font-weight: 600;
-  padding: 6px 14px;
-  transition: all 0.2s ease;
-}
-
-.btn-danger {
-  background: #ef4444;
-  border: none;
-}
-
-.btn-danger:hover {
-  background: #dc2626;
-}
-
-.btn-secondary {
-  background: #4f46e5;
-  border: none;
-}
-
-.btn-secondary:hover {
-  background: #4338ca;
-}
-
-.btn-outline-danger {
-  border-radius: 20px;
-  font-size: 13px;
-  padding: 5px 12px;
-}
-
-/* ---------- USER CARDS ---------- */
-#userList .card {
-  margin-bottom: 18px;
+  padding: 20px;
 }
 
 .card h5 {
   font-weight: 700;
-  color: #111827;
+  margin-bottom: 6px;
 }
 
 .card p {
   font-size: 14px;
-  color: #374151;
+  color: var(--text-muted);
   margin-bottom: 4px;
 }
 
-/* ---------- ROLE & STATUS BADGES ---------- */
-strong {
-  color: #1f2937;
+/* ===============================
+   ACTION BUTTON GROUP
+================================ */
+.card-body .btn {
+  margin-top: 8px;
+  margin-right: 6px;
 }
 
-/* ---------- FEEDBACK SECTION ---------- */
+/* ===============================
+   FEEDBACK SECTION
+================================ */
 h6 {
+  margin-top: 16px;
   font-weight: 600;
-  margin-top: 10px;
-  color: #4f46e5;
+  color: var(--primary);
 }
 
 .list-group-item {
-  border: none;
   background: #f9fafb;
-  margin-bottom: 6px;
-  border-radius: 8px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 12px;
   font-size: 14px;
+  margin-bottom: 6px;
 }
 
 .list-group-item small {
-  color: #6b7280;
+  color: var(--text-muted);
   font-size: 12px;
 }
 
-/* ---------- LOGOUT BUTTON ---------- */
-#logoutBtn {
-  float: right;
-  margin-bottom: 12px;
-}
-
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 768px) {
-  .container {
-    padding: 18px;
-  }
-
-  .card-body {
-    padding: 14px;
-  }
-}
+/* Highlight own review */
 .own-review {
-  background-color: #e0f2fe !important;
+  background: #e0f2fe !important;
   border-left: 4px solid #0ea5e9;
 }
+
+/* ===============================
+   ANIMATIONS
+================================ */
 #loginContainer {
-  animation: fadeIn 0.3s ease-in;
+  animation: fadeIn 0.25s ease-in;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -163,3 +230,15 @@ h6 {
   }
 }
 
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .login-card {
+    padding: 24px;
+  }
+
+  .card-body {
+    padding: 16px;
+  }
+}
