@@ -3,7 +3,7 @@ import { createUser } from "./services/user.service.js";
 import { login, logout, getSessionUser } from "./session.js";
 import { registerUser, loginUser } from "./services/auth.Service.js";
 
-// -------------------- UI REFERENCES --------------------
+// -------------------- UI REFERENCES -------------------- //
 const loginContainer = document.getElementById("loginContainer") as HTMLElement;
 const appContainer = document.getElementById("appContainer") as HTMLElement;
 
@@ -21,10 +21,10 @@ const authSubtitle = document.getElementById("authSubtitle") as HTMLElement;
 
 let isRegisterMode = false;
 
-// -------------------- INIT --------------------
+// -------------------- INIT -------------------- //
 showLogin();
 
-// -------------------- TOGGLE LOGIN / REGISTER --------------------
+// -------------------- LOGIN / REGISTER -------------------- //
 toggleAuth.addEventListener("click", () => {
   isRegisterMode = !isRegisterMode;
 
@@ -47,7 +47,7 @@ toggleAuth.addEventListener("click", () => {
   loginError.style.display = "none";
 });
 
-// -------------------- LOGIN --------------------
+// -------------------- LOGIN -------------------- //
 loginBtn.addEventListener("click", () => {
   const username = usernameInput.value.trim();
   const password = passwordInput.value.trim();
@@ -57,7 +57,7 @@ loginBtn.addEventListener("click", () => {
     return;
   }
 
-  // Head admin
+  //Head admin (privileges)
   if (username === "admin" && password === "admin123") {
     login(username, "ADMIN");
     showApp(getSessionUser()!);
@@ -74,7 +74,7 @@ loginBtn.addEventListener("click", () => {
   showApp(getSessionUser()!);
 });
 
-// -------------------- REGISTER --------------------
+// -------------------- REGISTER -------------------- //
 registerBtn.addEventListener("click", () => {
   const username = usernameInput.value.trim();
   const email = emailInput.value.trim();
@@ -102,28 +102,28 @@ registerBtn.addEventListener("click", () => {
     return;
   }
 
-  // ✅ SUCCESS MESSAGE
+  //Success Msg
   showError("Registration successful. Please login.", false);
 
-  // Reset fields
+  //Resetting fields
   usernameInput.value = "";
   emailInput.value = "";
   passwordInput.value = "";
 
-  // Switch back to login after 1.2s
+  //Switch back to login after 1.2s(might)
   setTimeout(() => {
     isRegisterMode = false;
     toggleAuth.click();
   }, 1200);
 });
 
-// -------------------- LOGOUT --------------------
+// -------------------- LOGOUT -------------------- //
 document.getElementById("logoutBtn")?.addEventListener("click", () => {
   logout();
   showLogin();
 });
 
-// -------------------- ADD USER --------------------
+// -------------------- ADD USER -------------------- //
 document.getElementById("addUserBtn")?.addEventListener("click", () => {
   const nameInput = document.getElementById("nameInput") as HTMLInputElement;
   const emailInput = document.getElementById("emailInput") as HTMLInputElement;
@@ -162,7 +162,7 @@ document.getElementById("addUserBtn")?.addEventListener("click", () => {
   }
 });
 
-// -------------------- UI HELPERS --------------------
+// -------------------- UI HELPERS -------------------- //
 function showLogin() {
   loginContainer.style.display = "flex";
   appContainer.style.display = "none";

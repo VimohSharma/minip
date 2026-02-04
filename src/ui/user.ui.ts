@@ -15,11 +15,11 @@ export function renderUsers(): void {
   const users = fetchAllUsers();
 
   users.forEach((user) => {
-    // 🔹 Get session user once per card
+    //Get session user once per card
     const sessionUser = getSessionUser();
     const isAdmin = sessionUser?.role === "ADMIN";
 
-    // 🔹 Fetch feedback for this user
+    //Fetch feedback for user
     const feedbacks = fetchFeedbackForUser(user.id);
 
     let feedbackHtml = "";
@@ -80,7 +80,7 @@ export function renderUsers(): void {
       deleteBtn.style.display = "none";
     }
 
-    // 🔹 Status rule — disable feedback if not approved
+    //Status rule disable feedback if not approved
     const feedbackBtn = card.querySelector(
       ".feedback-btn",
     ) as HTMLButtonElement;
@@ -88,13 +88,13 @@ export function renderUsers(): void {
       feedbackBtn.disabled = true;
     }
 
-    // 🔹 Delete listener
+    //Delete listener
     card.querySelector(".delete-btn")?.addEventListener("click", () => {
       removeUser(user.id);
       renderUsers();
     });
 
-    // 🔹 Feedback listener
+    //Feedback listener
     card.querySelector(".feedback-btn")?.addEventListener("click", () => {
       handleFeedback(user.id);
       renderUsers();

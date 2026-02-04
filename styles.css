@@ -1,6 +1,4 @@
-/* ===============================
-   GLOBAL RESET & THEME
-================================ */
+/*GLOBAL RESET & THEME*/
 :root {
   --primary: #4f46e5;
   --primary-dark: #4338ca;
@@ -25,9 +23,7 @@ html, body {
   color: var(--text-main);
 }
 
-/* ===============================
-   LOGIN SCREEN
-================================ */
+/*LOGIN SCREEN*/
 .login-wrapper {
   min-height: 100vh;
   display: flex;
@@ -55,9 +51,7 @@ html, body {
   margin-bottom: 24px;
 }
 
-/* ===============================
-   INPUTS & SELECTS
-================================ */
+/*INPUTS & SELECTS*/
 input, select {
   width: 100%;
   padding: 10px 12px;
@@ -72,9 +66,7 @@ input:focus, select:focus {
   box-shadow: 0 0 0 2px rgba(79,70,229,0.15);
 }
 
-/* ===============================
-   BUTTONS
-================================ */
+/*BUTTONS*/
 .btn {
   border-radius: 8px;
   font-weight: 600;
@@ -116,9 +108,7 @@ input:focus, select:focus {
   background: transparent;
 }
 
-/* ===============================
-   MAIN APP CONTAINER
-================================ */
+/*MAIN APP CONTAINER*/
 .container {
   margin-top: 32px;
   background: transparent;
@@ -129,9 +119,7 @@ input:focus, select:focus {
   margin-bottom: 16px;
 }
 
-/* ===============================
-   ADD USER FORM
-================================ */
+/*ADD USER FORM*/
 #userForm {
   background: var(--card-bg);
   padding: 20px;
@@ -140,9 +128,7 @@ input:focus, select:focus {
   margin-bottom: 30px;
 }
 
-/* ===============================
-   USER CARDS
-================================ */
+/*USER CARDS*/
 #userList .col-md-4 {
   margin-bottom: 20px;
 }
@@ -175,17 +161,13 @@ input:focus, select:focus {
   margin-bottom: 4px;
 }
 
-/* ===============================
-   ACTION BUTTON GROUP
-================================ */
+/*ACTION BUTTON GROUP*/
 .card-body .btn {
   margin-top: 8px;
   margin-right: 6px;
 }
 
-/* ===============================
-   FEEDBACK SECTION
-================================ */
+/*FEEDBACK SECTION*/
 h6 {
   margin-top: 16px;
   font-weight: 600;
@@ -212,9 +194,7 @@ h6 {
   border-left: 4px solid #0ea5e9;
 }
 
-/* ===============================
-   ANIMATIONS
-================================ */
+/*ANIMATIONS*/
 #loginContainer {
   animation: fadeIn 0.25s ease-in;
 }
@@ -230,9 +210,7 @@ h6 {
   }
 }
 
-/* ===============================
-   RESPONSIVE
-================================ */
+/*RESPONSIVE*/
 @media (max-width: 768px) {
   .login-card {
     padding: 24px;
